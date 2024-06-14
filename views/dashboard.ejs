@@ -1,0 +1,77 @@
+<!-- <%- include('navbar/navbar-after-login') %>
+
+<!-- Conteúdo do Dashboard -->
+<!-- <div id="charts-container" style="display: flex; justify-content: space-around; width: 100%;">
+    <div id="ranking-chart-container" style="width: 300px; height: 300px;"></div>
+    <div id="column-chart-container" style="width: 300px; height: 300px;"></div>
+</div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Consulta AJAX para obter os dados de flexões feitas pelos usuários
+        fetch('/dados-flexoes')
+            .then(response => response.json())
+            .then(data => {
+                // Gerar dados para o gráfico de ranking
+                var rankingData = data.map(item => [item.email, item.quant_flexoes]);
+                rankingData.sort((a, b) => b[1] - a[1]);
+
+                // Configurações do gráfico de ranking
+                var rankingChartOptions = {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'quantidade total de Flexões por Usuário'
+                    },
+                    xAxis: {
+                        type: 'category'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Quantidade de Flexões'
+                        }
+                    },
+                    series: [{
+                        name: 'Quantidade de Flexões',
+                        data: rankingData
+                    }]
+                };
+
+                // Renderiza o gráfico de ranking
+                Highcharts.chart('ranking-chart-container', rankingChartOptions);
+
+                // Gerar dados para o gráfico de colunas (apenas do usuário logado)
+                var columnData = data.find(item => item.email === '<%= user.email %>').quant_flexoes;
+
+                // Configurações do gráfico de colunas
+                var columnChartOptions = {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Quantidade de Flexões'
+                    },
+                    xAxis: {
+                        categories: ['<%= user.email %>']
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Quantidade de Flexões'
+                        }
+                    },
+                    series: [{
+                        name: 'Quantidade de Flexões',
+                        data: [columnData]
+                    }]
+                };
+
+                // Renderiza o gráfico de colunas
+                Highcharts.chart('column-chart-container', columnChartOptions);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados de flexões:', error);
+            });
+    });
+</script> --> -->

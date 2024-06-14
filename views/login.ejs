@@ -1,0 +1,47 @@
+<%- include('navbar/navbar-before-login') %>
+
+<div class="d-flex justify-content-center align-items-center" style="height: 70vh;">
+    <div class="login-container d-flex">
+        <div class="logo-container">
+            <img src="/uploads/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="form-container">
+            <h1>Login</h1>
+            <% if (messages.error) { %>
+                <p class="text-danger"><%= messages.error %></p>
+            <% } %>
+            <form action="/login" method="post">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .login-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-container {
+        margin-right: 10px;
+    }
+
+    .logo {
+        width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+        height: auto;
+    }
+
+    .form-container {
+        max-width: 300px; /* Ajuste o tamanho do formulário conforme necessário */
+    }
+</style>
